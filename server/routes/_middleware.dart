@@ -15,7 +15,6 @@ Handler middleware(Handler handler) {
 
     final response =
         await handler.use(provider<Session>((_) => conn)).call(context);
-    print(response.runtimeType);
 
     Future.delayed(const Duration(seconds: 5), () {
       conn.close();
