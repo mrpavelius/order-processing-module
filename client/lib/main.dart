@@ -204,6 +204,7 @@ class HomePage extends StatelessWidget {
                               .where((order) => order.status != 'Загружен')
                               .toList();
                           orders.sort((a, b) => a.id.compareTo(b.id));
+                          orders.sort((a, b) => a.status.length.compareTo(b.status.length));
                           return MediaQuery.removePadding(
                               removeTop: true,
                               context: context,
